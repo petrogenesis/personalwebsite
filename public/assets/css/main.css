@@ -3346,3 +3346,49 @@ input, select, textarea {
 			}
 
 	}
+
+	.blog-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 20px;
+		padding: 40px;
+	  }
+	  
+	  .blog-card {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+		transition: transform 0.3s ease;
+		text-decoration: none;
+	  }
+	  
+	  .blog-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	  }
+	  
+	  .blog-card:hover img {
+		transform: scale(1.05);
+	  }
+	  
+	  .blog-card .overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		padding: 12px;
+		font-size: 1rem;
+		font-family: sans-serif;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	  }
+	  
+	  .blog-card:hover .overlay {
+		opacity: 1;
+	  }
