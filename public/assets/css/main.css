@@ -3399,3 +3399,8 @@ input, select, textarea {
   font-weight: bold;
   font-family:monospace;
 }
+
+.highlight-link {
+    color: #3700ff;       /* your desired color */
+    text-decoration: none; /* optional */
+}
