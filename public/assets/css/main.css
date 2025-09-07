@@ -3383,7 +3383,8 @@ input, select, textarea {
 		background: rgba(0, 0, 0, 0.5);
 		color: white;
 		padding: 12px;
-		font-size: 1rem;
+		font-size: 1.25rem;
+		font-weight: bold;
 		font-family: sans-serif;
 		opacity: 0;
 		transition: opacity 0.3s ease;
@@ -3392,6 +3393,18 @@ input, select, textarea {
 	  .blog-card:hover .overlay {
 		opacity: 1;
 	  }
+
+/*extra rule for when theres only one card to reduce size.*/
+
+	  .blog-grid:only-child,
+.blog-grid:has(> .blog-card:only-child) {
+  justify-content: center; /* center the card */
+}
+
+.blog-grid:has(> .blog-card:only-child) .blog-card {
+  max-width: 1000px; /* set a smaller max width */
+  margin: 0 auto;   /* center horizontally */
+}
 
 	h3.fenics-header {
   text-align: center;
