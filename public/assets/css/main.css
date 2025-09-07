@@ -3392,3 +3392,10 @@ input, select, textarea {
 	  .blog-card:hover .overlay {
 		opacity: 1;
 	  }
+
+	h3.fenics-header {
+  text-align: center;
+  font-size: 2rem; /* adjust as you like */
+  font-weight: bold;
+  font-family:monospace;
+}
