@@ -3554,11 +3554,20 @@ input, select, textarea {
 /* Close button */
 .close {
   position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 1.5rem;
+  top: 16px;           /* move slightly down */
+  right: 16px;         /* move slightly left */
+  font-size: 2.5rem;   /* bigger size for mobile */
+  font-weight: bold;
+  color: #9a9a9a;      /* bright color for visibility */
   cursor: pointer;
+  z-index: 1010;       /* make sure it's above modal content */
+  user-select: none;   /* prevent accidental text selection */
+  padding: 8px;        /* give it a clickable area */
+  border-radius: 50%;  /* optional: make it circular */
+  background: rgba(255,255,255,0.8); /* optional: semi-transparent bg */
+  transition: transform 0.2s ease, background 0.2s ease;
 }
+
 
 /* ---------------- Modal Gallery Thumbnails ---------------- */
 .modal-gallery {
