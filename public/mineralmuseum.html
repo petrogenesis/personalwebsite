@@ -1,102 +1,153 @@
 <!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
-		<title>Mineral Museum - Personal website by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+    <title>Mineral Museum - Personal website by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Make filters inline except locality search */
+        .filters-panel {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        .filters-panel label, .filters-panel input, .filters-panel select, .filters-panel button {
+            font-size: 0.85rem;
+            height: 30px;
+            padding: 2px 4px;
+        }
+        .filters-panel h3 {
+            flex-basis: 100%;
+            margin: 0 0 4px 0;
+        }
+    </style>
+</head>
 <body class="right-sidebar is-preload">
-		<div id="page-wrapper">
+    <div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<li class="submenu">
-								<a href="#">Menu</a>
-								<ul>
-									<li><a href="projects.html">Projects</a></li>
-									<li><a href="mineralcollection.html">Mineral Collection</a></li>
-									<li><a href="blog.html">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</header>
+        <!-- Header -->
+        <header id="header">
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li class="submenu">
+                        <a href="#">Menu</a>
+                        <ul>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="mineralcollection.html">Mineral Collection</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-<!-- Main -->
-<div class="museum-container">
-  <aside class="sidebar">
-    <h3>Categories</h3>
-    <ul id="category-list"></ul>
-  </aside>
+        <!-- Main -->
+        <div class="museum-container">
+            <!-- Sidebar categories -->
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul id="category-list"></ul>
+            </aside>
 
-  <main class="museum-main">
-     <div class="museum-header">
-    <h1>Mineral Museum</h1>
-    <input type="text" id="search" placeholder="Search minerals...">
-  </div>
+            <main class="museum-main">
+                <div class="museum-header">
+                    <h1>Mineral Museum</h1>
+                    <input type="text" id="search" placeholder="Search minerals...">
+                </div>
 
-    <section class="mineral-grid" id="mineral-grid">
-      <!-- Cards will be generated here dynamically -->
-    </section>
+                <!-- Filters -->
+                <div class="filters-panel">
+                    <label for="filter-locality">Locality:</label>
+                    <input type="text" id="filter-locality" placeholder="Enter locality">
 
-<!--Modal Container-->
-<div id="mineral-modal" class="modal hidden">
-  <div class="modal-content">
-    <span class="close">&times;</span>
+                    <label for="filter-size">Size:</label>
+                    <select id="filter-size">
+                        <option value="">All</option>
+                        <option value="Micromount">Micromount</option>
+                        <option value="Thumbnail">Thumbnail</option>
+                        <option value="Miniature">Miniature</option>
+                        <option value="Small Cabinet">Small Cabinet</option>
+                        <option value="Cabinet">Cabinet</option>
+                    </select>
 
-    <img id="modal-image" alt="">
-    <div id="modal-gallery" class="modal-gallery"></div>
-    <h2 id="modal-name"></h2>
+                    <label for="filter-weight-min">Weight Min:</label>
+                    <input type="number" id="filter-weight-min" placeholder="0">
 
-    <div class="modal-info">
-      <p><strong>Locality:</strong> <span id="modal-locality"></span></p>
-	  <p><strong>Dimensions:</strong> <span id="modal-dimensions"></span></p>
-	  <p><strong>Size:</strong> <span id="modal-size"></span></p>
-      <p><strong>Weight:</strong> <span id="modal-weight"></span></p>
-      <p><strong>Price:</strong> <span id="modal-price"></span></p>
-      <p><strong>Crystal System:</strong> <span id="modal-system"></span></p>
+                    <label for="filter-weight-max">Weight Max:</label>
+                    <input type="number" id="filter-weight-max" placeholder="">
+
+                    <label for="filter-price-min">Price Min:</label>
+                    <input type="number" id="filter-price-min" placeholder="0">
+
+                    <label for="filter-price-max">Price Max:</label>
+                    <input type="number" id="filter-price-max" placeholder="">
+
+                    <label for="filter-system">Crystal System:</label>
+                    <select id="filter-system">
+                        <option value="">All</option>
+                        <option value="Triclinic">Triclinic</option>
+                        <option value="Monoclinic">Monoclinic</option>
+                        <option value="Orthorhombic">Orthorhombic</option>
+                        <option value="Tetragonal">Tetragonal</option>
+                        <option value="Trigonal">Trigonal</option>
+                        <option value="Hexagonal">Hexagonal</option>
+                        <option value="Cubic">Cubic</option>
+                    </select>
+
+                    <button id="filter-reset">Reset Filters</button>
+                </div>
+
+                <!-- Mineral grid -->
+                <section class="mineral-grid" id="mineral-grid"></section>
+            </main>
+        </div>
+
+        <!-- Modal -->
+        <div id="mineral-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modal-image" alt="">
+                <div id="modal-gallery" class="modal-gallery"></div>
+                <h2 id="modal-name"></h2>
+                <div class="modal-info">
+                    <p><strong>Locality:</strong> <span id="modal-locality"></span></p>
+                    <p><strong>Dimensions:</strong> <span id="modal-dimensions"></span></p>
+                    <p><strong>Size:</strong> <span id="modal-size"></span></p>
+                    <p><strong>Weight:</strong> <span id="modal-weight"></span></p>
+                    <p><strong>Price:</strong> <span id="modal-price"></span></p>
+                    <p><strong>Crystal System:</strong> <span id="modal-system"></span></p>
+                </div>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://github.com/petrogenesis" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+                <li><a href="https://www.linkedin.com/in/cameron-seebeck/" class="icon brands circle fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Cameron Seebeck</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
     </div>
 
-    <p id="modal-description"></p>
-  </div>
-</div>
-
-<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<li><a href="https://github.com/petrogenesis" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/cameron-seebeck/" class="icon brands circle fa-linkedin-in"><span class="label">Dribbble</span></a></li>
-					</ul>
-
-					<ul class="copyright">
-						<li>&copy; Cameron Seebeck</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-				</footer>
-		</div>
-
     <!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-            <script src="assets/js/mineral-museum.js"></script>
-    </body>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollgress.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/mineral-museum.js"></script>
+</body>
 </html>

@@ -3757,3 +3757,61 @@ input, select, textarea {
   border-color: #666;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
+/* ---------------- Filters Panel ---------------- */
+.filters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filters-panel label {
+  font-weight: bold;          /* make text bold */
+  font-size: 1rem;            /* slightly larger text */
+}
+
+.filters-panel input,
+.filters-panel select {
+  font-size: 1rem;            /* larger text in inputs */
+  padding: 6px 10px;          /* more comfortable padding */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filters-panel button {
+  font-size: 1rem;            /* larger button text */
+  font-weight: bold;           /* bold text */
+  padding: 6px 12px;          /* comfortable padding */
+  border-radius: 6px;
+  border: none;
+  background-color: #9dadbe;  /* blue button */
+  color: #fff;                /* white text */
+  cursor: pointer;
+  display: flex;              /* for centering text */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  transition: background 0.2s ease;
+}
+
+.filters-panel button:hover {
+  background-color: #0056b3;  /* darker on hover */
+}
+
+/* Fix select dropdown text vertical alignment */
+.filters-panel select {
+    font-size: 1rem;           /* keep text slightly larger */
+    padding: 6px 10px;          /* ensure some horizontal padding */
+    height: 34px;               /* fixed height to fit text */
+    line-height: 1.2;           /* align text vertically */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;     /* include padding in height */
+    appearance: none;           /* remove default arrow style for uniformity */
+}
+
+/* Optional: adjust option padding inside select for some browsers */
+.filters-panel select option {
+    padding: 4px 6px;
+}

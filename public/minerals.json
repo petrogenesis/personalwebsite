@@ -14,22 +14,5 @@
       "images/mineral-museum-images/quartz/quartz1.jpg",
       "images/mineral-museum-images/quartz/quartz2.jpg"
     ],
-    "description": "Clear quartz cluster with well-formed terminations."
-  },
-    {
-    "name": "Garnet",
-    "locality": "California, USA",
-     "dimensions": "10 x 8 x 6 cm",
-     "size": "Cabinet",
-    "weight": "1.2 kg",
-    "price": "$45",
-    "system": "Trigonal",
-    "category": "Silicates",
-    "subcategory": "Garnets",
-    "image": "images/mineral-museum-images/quartz/quartz.jpg",
-    "images": [
-      "images/mineral-museum-images/quartz/quartz1.jpg",
-      "images/mineral-museum-images/quartz/quartz2.jpg"
-    ],
-    "description": "Clear quartz cluster with well-formed terminations."
+    "description": "This is a test mineral. Mineral Museum is still under construction."
   }]
