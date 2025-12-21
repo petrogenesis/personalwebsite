@@ -2,6 +2,7 @@
   {
     "name": "Quartz",
     "locality": "Arkansas, USA",
+     "dimensions": "10 x 8 x 6 cm",
     "weight": "1.2 kg",
     "price": "$45",
     "system": "Trigonal",
@@ -17,6 +18,7 @@
     {
     "name": "Garnet",
     "locality": "California, USA",
+     "dimensions": "10 x 8 x 6 cm",
     "weight": "1.2 kg",
     "price": "$45",
     "system": "Trigonal",
@@ -25,8 +27,7 @@
     "image": "images/mineral-museum-images/quartz/quartz.jpg",
     "images": [
       "images/mineral-museum-images/quartz/quartz1.jpg",
-      "images/mineral-museum-images/quartz/quartz2.jpg",
-      "images/mineral-museum-images/quartz/quartz3.jpg"
+      "images/mineral-museum-images/quartz/quartz2.jpg"
     ],
     "description": "Clear quartz cluster with well-formed terminations."
   }]

@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const modalImage = document.getElementById("modal-image");
   const modalName = document.getElementById("modal-name");
   const modalLocality = document.getElementById("modal-locality");
+  const modalDimensions = document.getElementById("modal-dimensions");
   const modalWeight = document.getElementById("modal-weight");
   const modalPrice = document.getElementById("modal-price");
   const modalSystem = document.getElementById("modal-system");
@@ -15,11 +16,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const gallery = document.getElementById("modal-gallery");
   const closeBtn = document.querySelector(".close");
 
+  // Track current gallery images for keyboard navigation
+  let currentGalleryImages = [];
+  let currentImageIndex = 0;
+
+  // Open modal for a given card
   function openMineralModal(card) {
     modalImage.src = card.dataset.image;
     modalImage.alt = card.dataset.name;
     modalName.textContent = card.dataset.name;
     modalLocality.textContent = card.dataset.locality;
+    modalDimensions.textContent = card.dataset.dimensions || "N/A";
     modalWeight.textContent = card.dataset.weight;
     modalPrice.textContent = card.dataset.price;
     modalSystem.textContent = card.dataset.system;
@@ -27,17 +34,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Build gallery
     gallery.innerHTML = "";
-    const images = [card.dataset.image];
+    currentGalleryImages = [card.dataset.image];
     if (card.dataset.images) {
       const extraImages = card.dataset.images.split(",").map(img => img.trim());
-      images.push(...extraImages);
+      currentGalleryImages.push(...extraImages);
     }
+    currentImageIndex = 0;
 
-    images.forEach(src => {
+    currentGalleryImages.forEach((src, index) => {
       const thumb = document.createElement("img");
       thumb.src = src;
       thumb.alt = card.dataset.name;
-      thumb.addEventListener("click", () => { modalImage.src = src; });
+
+      thumb.addEventListener("click", () => {
+        currentImageIndex = index;
+        modalImage.src = src;
+      });
+
       gallery.appendChild(thumb);
     });
 
@@ -48,7 +61,30 @@ document.addEventListener("DOMContentLoaded", async () => {
   closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
   modal.addEventListener("click", e => { if(e.target === modal) modal.classList.add("hidden"); });
 
-  // Fetch minerals
+  // Keyboard navigation: ESC + arrow keys
+  document.addEventListener("keydown", (e) => {
+    if (modal.classList.contains("hidden")) return;
+
+    switch (e.key) {
+      case "Escape":
+        modal.classList.add("hidden");
+        break;
+      case "ArrowLeft":
+        if (currentGalleryImages.length > 1) {
+          currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+          modalImage.src = currentGalleryImages[currentImageIndex];
+        }
+        break;
+      case "ArrowRight":
+        if (currentGalleryImages.length > 1) {
+          currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+          modalImage.src = currentGalleryImages[currentImageIndex];
+        }
+        break;
+    }
+  });
+
+  // Fetch minerals from JSON
   let minerals = [];
   try {
     const response = await fetch("minerals.json");
@@ -61,13 +97,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (mineral.subcategory) categoryMap[mineral.category].add(mineral.subcategory);
     });
 
+    // Create mineral cards
     minerals.forEach(mineral => {
       const card = document.createElement("div");
       card.classList.add("mineral-card");
 
-      // Set data attributes for modal
+      // Set data attributes
       card.dataset.name = mineral.name;
       card.dataset.locality = mineral.locality;
+      card.dataset.dimensions = mineral.dimensions || "";
       card.dataset.weight = mineral.weight;
       card.dataset.price = mineral.price;
       card.dataset.system = mineral.system;
@@ -100,13 +138,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       li.textContent = cat;
       li.style.cursor = "pointer";
 
-      // Click main category → show all minerals in that category
+      // Main category click
       li.addEventListener("click", () => {
         filterCards(cat, null, searchInput.value);
         highlightActive(li);
       });
 
-      // Add subcategory list if present
+      // Subcategories
       if (subcats.size > 0) {
         const ul = document.createElement("ul");
         ul.style.paddingLeft = "12px";
@@ -115,7 +153,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           subLi.textContent = sub;
           subLi.style.cursor = "pointer";
           subLi.addEventListener("click", e => {
-            e.stopPropagation(); // prevent triggering parent click
+            e.stopPropagation();
             filterCards(cat, sub, searchInput.value);
             highlightActive(subLi);
           });
