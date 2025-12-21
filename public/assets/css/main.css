@@ -3417,3 +3417,334 @@ input, select, textarea {
     color: #3700ff;       /* your desired color */
     text-decoration: none; /* optional */
 }
+
+/* ---------------- Mineral Museum Container ---------------- */
+.museum-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Sidebar for categories */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* Main content area */
+.museum-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Search bar */
+#search {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ---------------- Mineral Grid ---------------- */
+.mineral-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px); /* fixed card width */
+  justify-content: start;   /* align cards to the left */
+  gap: 16px 16px;           /* row-gap and column-gap */
+  padding: 0;
+}
+/* ---------------- Mineral Card ---------------- */
+.mineral-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 250px;         /* card width limit */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.mineral-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image inside card */
+.mineral-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* ensures square image */
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Text inside card */
+.mineral-card h3,
+.mineral-card p {
+  margin: 4px 8px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* ---------------- Modal ---------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Modal main image */
+.modal-content img#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+/* Modal text */
+.modal-content h2 {
+  margin: 8px 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Modal info section */
+.modal-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ---------------- Modal Gallery Thumbnails ---------------- */
+.modal-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.modal-gallery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-gallery img:hover,
+.modal-gallery img.active {
+  opacity: 1;
+  transform: scale(1.05);
+  border: 2px solid #007BFF; /* highlight for active thumbnail */
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .museum-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .museum-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .mineral-card {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .modal-gallery img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #search {
+    max-width: 100%;
+  }
+}
+
+/* Sidebar + layout */
+.museum-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 6px 4px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: #e0e0e0;
+}
+
+.sidebar ul li.active {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Search bar */
+#search {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 16px;
+}
+
+/* Grid and cards */
+.mineral-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  justify-content: start;
+  gap: 16px;
+  padding: 0;
+}
+
+.mineral-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.mineral-card:hover {
+  transform: translateY(-5px);
+}
+
+.mineral-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.mineral-card h3,
+.mineral-card p {
+  margin: 4px 8px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* Museum header */
+.museum-header {
+  text-align: center;        /* center title and search bar */
+  margin-bottom: 30px;       /* space between header and grid */
+}
+
+.museum-header h1 {
+  font-size: 2.5rem;         /* larger title */
+  margin-bottom: 16px;       /* space between title and search */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Mineral Museum Search Bar */
+.museum-header #search {
+  display: inline-block;     /* inline-block so it stays centered */
+  width: 60%;                /* adjust width */
+  max-width: 500px;          /* optional max width */
+  padding: 12px 20px;        /* larger input */
+  font-size: 1.2rem;         /* bigger text */
+  border: 2px solid #ccc;    /* subtle border */
+  border-radius: 8px;        /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.museum-header #search:focus {
+  border-color: #666;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
