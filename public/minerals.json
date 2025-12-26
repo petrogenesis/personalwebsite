@@ -1,19 +1,658 @@
 [
   {
-    "name": "Quartz",
-    "locality": "Arkansas, USA",
-     "dimensions": "10 x 8 x 6 cm",
-     "size": "Cabinet",
-    "weight": "1.2 kg",
-    "price": "$45",
-    "system": "Trigonal",
-    "selfCollected": "Yes",
+    "name": "Uvarovite",
+    "locality": "Jacksonville, California, USA",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
     "category": "Silicates",
-    "subcategory": "Quartz",
-    "image": "images/mineral-museum-images/quartz/quartz.jpg",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u1-1.jpg",
     "images": [
-      "images/mineral-museum-images/quartz/quartz1.jpg",
-      "images/mineral-museum-images/quartz/quartz2.jpg"
+      "images/mineral-museum-images/uvarovite/u1-2.jpg",
+      "images/mineral-museum-images/uvarovite/l1.jpg"
     ],
-    "description": "This is a test mineral. Mineral Museum is still under construction."
-  }]
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Jacksonville, California, USA",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u2-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u2-2.jpg",
+      "images/mineral-museum-images/uvarovite/l2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Jacksonville, California, USA",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u3-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u3-2.jpg",
+      "images/mineral-museum-images/uvarovite/l3-1.jpg",
+      "images/mineral-museum-images/uvarovite/l3-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Koh-e-Tizabi, Andarab, Baghlan, Afghanistan",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u4-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u4-2.jpg",
+      "images/mineral-museum-images/uvarovite/l4.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Koh-e-Tizabi, Andarab, Baghlan, Afghanistan",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u5-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u5-2.jpg",
+      "images/mineral-museum-images/uvarovite/l5.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u6-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u6-2.jpg",
+      "images/mineral-museum-images/uvarovite/u6-3.jpg",
+      "images/mineral-museum-images/uvarovite/l6.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u7-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u7-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u8-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u8-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u9-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u9-2.jpg",
+      "images/mineral-museum-images/uvarovite/l9.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u10-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u10-2.jpg",
+      "images/mineral-museum-images/uvarovite/u10-3.jpg",
+      "images/mineral-museum-images/uvarovite/l10-1.jpg",
+      "images/mineral-museum-images/uvarovite/l10-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u11-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u11-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u12-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u12-2.jpg",
+      "images/mineral-museum-images/uvarovite/l12.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u13-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u13-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u14-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u14-2.jpg",
+      "images/mineral-museum-images/uvarovite/l14.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Guleman Mines, Guleman, Elazig Province, Turkey",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u15-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u15-2.jpg",
+      "images/mineral-museum-images/uvarovite/l15.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Hokkaido, Japan",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u16-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u16-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Philippines",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u17-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u17-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Caledonia Mine, Holguín Province, Cuba",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u18-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u18-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Cuba",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u19-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u19-2.jpg",
+      "images/mineral-museum-images/uvarovite/l19.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Kazakhstan",
+    "dimensions": "N/A",
+    "size": "Micromount",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u20-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u20-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Tibet",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u21-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u21-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Tibet",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u22-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u22-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Hokkaido, Japan",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u23-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u23-2.jpg",
+      "images/mineral-museum-images/uvarovite/l23.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u24-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u24-2.jpg",
+      "images/mineral-museum-images/uvarovite/l24.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Acoje Mine, Luzon, Philippines",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u25-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u25-2.jpg",
+      "images/mineral-museum-images/uvarovite/l25.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Ano Virsini, Macedonia, Greece",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u26-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u26-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Hokkaido, Japan",
+    "dimensions": "N/A",
+    "size": "Thumbnail",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u27-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u27-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Laghman, Afghanistan",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u28-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u28-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite(?)",
+    "locality": "South Ham, Wolfe County, Quebec, Canada",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u29-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u29-2.jpg",
+      "images/mineral-museum-images/uvarovite/l29.jpg"
+    ],
+    "description": "*Mineral is more than likely Chrome Grossular. Locality label also appears to be defunct."
+  },
+  {
+    "name": "Uvarovite(?)",
+    "locality": "Lake Brompton, Québec, Canada",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u30-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u30-2.jpg"
+    ],
+    "description": "*Mineral is more than likely Chrome Grossular."
+  },
+  {
+    "name": "Uvarovite(?)",
+    "locality": "Vermont, USA",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u31-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u31-2.jpg",
+      "images/mineral-museum-images/uvarovite/l31.jpg"
+    ],
+    "description": "*Mineral is more than likely Chrome Grossular."
+  },
+  {
+    "name": "Uvarovite(?)",
+    "locality": "Zermatt, Switzerland",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u32-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u32-2.jpg",
+      "images/mineral-museum-images/uvarovite/l32.jpg"
+    ],
+    "description": "*Whether or not this mineral is truly Uvarovite or if its locality is accurate is under debate."
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Hatta Mine, Tanukiiwa, Hokkaido, Japan",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u33-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u33-2.jpg",
+      "images/mineral-museum-images/uvarovite/l33.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Prae Quarry, Framura, La Spezia Province, Liguria, Italy",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u34-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u34-2.jpg",
+      "images/mineral-museum-images/uvarovite/l34.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Caledonia Mine, Holguín Province, Cuba",
+    "dimensions": "N/A",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u35-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u35-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Outokumpu, Finland",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u36-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u36-2.jpg",
+      "images/mineral-museum-images/uvarovite/u36-3.jpg",
+      "images/mineral-museum-images/uvarovite/l36-1.jpg",
+      "images/mineral-museum-images/uvarovite/l36-2.jpg"
+    ],
+    "description": ""
+  },
+  {
+    "name": "Uvarovite",
+    "locality": "Philippines",
+    "dimensions": "N/A",
+    "size": "Small Cabinet",
+    "weight": "N/A",
+    "price": "NFS",
+    "system": "Cubic",
+    "selfCollected": "No",
+    "category": "Silicates",
+    "subcategory": "Garnets",
+    "image": "images/mineral-museum-images/uvarovite/u37-1.jpg",
+    "images": [
+      "images/mineral-museum-images/uvarovite/u37-2.jpg"
+    ],
+    "description": ""
+  }
+]

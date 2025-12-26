@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.dataset.weight = mineral.weight;
       card.dataset.price = mineral.price;
       card.dataset.system = mineral.system;
-      card.dataset.selfCollected = mineral.selfCollected ? "Yes" : "No";
+      card.dataset.selfCollected = (mineral.selfCollected && mineral.selfCollected.toLowerCase() === "yes") ? "Yes" : "No";
       card.dataset.image = mineral.image;
       card.dataset.images = mineral.images.join(",");
       card.dataset.description = mineral.description;
