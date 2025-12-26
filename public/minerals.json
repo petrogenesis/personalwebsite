@@ -7,6 +7,7 @@
     "weight": "1.2 kg",
     "price": "$45",
     "system": "Trigonal",
+    "selfCollected": "Yes",
     "category": "Silicates",
     "subcategory": "Quartz",
     "image": "images/mineral-museum-images/quartz/quartz.jpg",
