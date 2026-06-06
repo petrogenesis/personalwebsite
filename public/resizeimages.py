@@ -5,7 +5,7 @@ import os
 INPUT_FOLDER = "images/mineral-museum-images"
 OUTPUT_FOLDER = "images/mineral-museum-images-thumbnails"
 
-MAX_SIZE = (400, 400)  # adjust this (e.g. 300x300 for smaller cards)
+MAX_SIZE = (800, 800)  # adjust this (e.g. 300x300 for smaller cards)
 QUALITY = 85  # JPEG compression quality
 
 # ---------------------------------------
