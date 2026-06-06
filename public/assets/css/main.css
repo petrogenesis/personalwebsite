@@ -3874,3 +3874,112 @@ input, select, textarea {
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* ---------------- DARK MODE ---------------- */
+
+body.dark-mode {
+  background: #0f0f10;
+  color: #e6e6e6;
+}
+
+/* Header / layout */
+body.dark-mode #header,
+body.dark-mode .sidebar,
+body.dark-mode .museum-header,
+body.dark-mode .filters-panel {
+  background: #161618;
+  color: #e6e6e6;
+  border-color: #2a2a2a;
+}
+
+/* Cards */
+body.dark-mode .mineral-card {
+  background: #1a1a1d;
+  color: #e6e6e6;
+  border: 1px solid #2a2a2a;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background: #1a1a1d;
+  color: #e6e6e6;
+  border: 1px solid #333;
+}
+
+/* Links / hover */
+body.dark-mode a {
+  color: #9ad1ff;
+}
+
+body.dark-mode .mineral-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+  background: #161618;
+  color: #e6e6e6;
+}
+
+/* Sidebar category hover fix */
+.sidebar ul li {
+    color: #eaeaea;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.08); /* soft highlight instead of white block */
+    color: #ffffff;
+}
+
+/* Fix submenu hover (subcategories) */
+.sidebar ul li ul li:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.museum-header h1 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.mineral-card h3 {
+    color: #f2f2f2;
+    margin-top: 8px;
+}
+
+.mineral-card p {
+    color: #cfcfcf;
+}
+
+/* ---------------- MODAL DARK MODE FIX ---------------- */
+
+.modal-content {
+    background: #141821;   /* dark panel */
+    color: #eaeaea;        /* default text */
+}
+
+/* All modal text blocks */
+.modal-content h2,
+.modal-content p,
+.modal-content strong,
+.modal-content span {
+    color: #eaeaea !important;
+}
+
+/* Optional: make labels slightly softer than values */
+.modal-content strong {
+    color: #ffffff;
+}
+
+/* Gallery background consistency */
+.modal-gallery {
+    background: transparent;
+}
+
+/* Close button visibility */
+.modal .close {
+    color: #ffffff;
+}
