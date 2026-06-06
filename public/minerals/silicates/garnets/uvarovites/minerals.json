@@ -1,5 +1,6 @@
 [
   {
+    "id": "GAR-0001",
     "name": "Uvarovite",
     "locality": "Jacksonville, California, USA",
     "dimensions": "N/A",
@@ -15,9 +16,11 @@
       "images/mineral-museum-images/uvarovite/u1-2.jpg",
       "images/mineral-museum-images/uvarovite/l1.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0002",
     "name": "Uvarovite",
     "locality": "Jacksonville, California, USA",
     "dimensions": "N/A",
@@ -33,9 +36,12 @@
       "images/mineral-museum-images/uvarovite/u2-2.jpg",
       "images/mineral-museum-images/uvarovite/l2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0003",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Jacksonville, California, USA",
     "dimensions": "N/A",
@@ -52,9 +58,11 @@
       "images/mineral-museum-images/uvarovite/l3-1.jpg",
       "images/mineral-museum-images/uvarovite/l3-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0004",
     "name": "Uvarovite",
     "locality": "Koh-e-Tizabi, Andarab, Baghlan, Afghanistan",
     "dimensions": "N/A",
@@ -70,9 +78,11 @@
       "images/mineral-museum-images/uvarovite/u4-2.jpg",
       "images/mineral-museum-images/uvarovite/l4.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0005",
     "name": "Uvarovite",
     "locality": "Koh-e-Tizabi, Andarab, Baghlan, Afghanistan",
     "dimensions": "N/A",
@@ -88,9 +98,12 @@
       "images/mineral-museum-images/uvarovite/u5-2.jpg",
       "images/mineral-museum-images/uvarovite/l5.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0006",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -107,9 +120,11 @@
       "images/mineral-museum-images/uvarovite/u6-3.jpg",
       "images/mineral-museum-images/uvarovite/l6.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0007",
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -124,9 +139,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u7-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0008",
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -141,9 +158,12 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u8-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0009",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -159,9 +179,12 @@
       "images/mineral-museum-images/uvarovite/u9-2.jpg",
       "images/mineral-museum-images/uvarovite/l9.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0010",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -179,9 +202,12 @@
       "images/mineral-museum-images/uvarovite/l10-1.jpg",
       "images/mineral-museum-images/uvarovite/l10-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0011",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -196,9 +222,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u11-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0012",
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -214,9 +242,11 @@
       "images/mineral-museum-images/uvarovite/u12-2.jpg",
       "images/mineral-museum-images/uvarovite/l12.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0013",
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -231,9 +261,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u13-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0014",
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -249,9 +281,11 @@
       "images/mineral-museum-images/uvarovite/u14-2.jpg",
       "images/mineral-museum-images/uvarovite/l14.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0015",
     "name": "Uvarovite",
     "locality": "Guleman Mines, Guleman, Elazig Province, Turkey",
     "dimensions": "N/A",
@@ -267,9 +301,11 @@
       "images/mineral-museum-images/uvarovite/u15-2.jpg",
       "images/mineral-museum-images/uvarovite/l15.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0016",
     "name": "Uvarovite",
     "locality": "Hokkaido, Japan",
     "dimensions": "N/A",
@@ -284,9 +320,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u16-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0017",
     "name": "Uvarovite",
     "locality": "Philippines",
     "dimensions": "N/A",
@@ -301,9 +339,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u17-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0018",
     "name": "Uvarovite",
     "locality": "Caledonia Mine, Holguín Province, Cuba",
     "dimensions": "N/A",
@@ -318,9 +358,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u18-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0019",
     "name": "Uvarovite",
     "locality": "Cuba",
     "dimensions": "N/A",
@@ -336,9 +378,12 @@
       "images/mineral-museum-images/uvarovite/u19-2.jpg",
       "images/mineral-museum-images/uvarovite/l19.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0020",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Kazakhstan",
     "dimensions": "N/A",
@@ -353,9 +398,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u20-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0021",
     "name": "Uvarovite",
     "locality": "Tibet",
     "dimensions": "N/A",
@@ -370,9 +417,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u21-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0022",
     "name": "Uvarovite",
     "locality": "Tibet",
     "dimensions": "N/A",
@@ -387,9 +436,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u22-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0023",
     "name": "Uvarovite",
     "locality": "Hokkaido, Japan",
     "dimensions": "N/A",
@@ -405,9 +456,12 @@
       "images/mineral-museum-images/uvarovite/u23-2.jpg",
       "images/mineral-museum-images/uvarovite/l23.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0024",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -423,9 +477,12 @@
       "images/mineral-museum-images/uvarovite/u24-2.jpg",
       "images/mineral-museum-images/uvarovite/l24.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0025",
+    "featured": true,
     "name": "Uvarovite",
     "locality": "Acoje Mine, Luzon, Philippines",
     "dimensions": "N/A",
@@ -441,9 +498,11 @@
       "images/mineral-museum-images/uvarovite/u25-2.jpg",
       "images/mineral-museum-images/uvarovite/l25.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-00026",
     "name": "Uvarovite",
     "locality": "Ano Virsini, Macedonia, Greece",
     "dimensions": "N/A",
@@ -458,9 +517,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u26-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0027",
     "name": "Uvarovite",
     "locality": "Hokkaido, Japan",
     "dimensions": "N/A",
@@ -475,9 +536,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u27-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0028",
     "name": "Uvarovite",
     "locality": "Laghman, Afghanistan",
     "dimensions": "N/A",
@@ -492,9 +555,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u28-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0029",
     "name": "Uvarovite(?)",
     "locality": "South Ham, Wolfe County, Quebec, Canada",
     "dimensions": "N/A",
@@ -510,9 +575,11 @@
       "images/mineral-museum-images/uvarovite/u29-2.jpg",
       "images/mineral-museum-images/uvarovite/l29.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": "*Mineral is more than likely Chrome Grossular. Locality label also appears to be defunct."
   },
   {
+    "id": "GAR-0030",
     "name": "Uvarovite(?)",
     "locality": "Lake Brompton, Québec, Canada",
     "dimensions": "N/A",
@@ -527,9 +594,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u30-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": "*Mineral is more than likely Chrome Grossular."
   },
   {
+    "id": "GAR-0031",
     "name": "Uvarovite(?)",
     "locality": "Vermont, USA",
     "dimensions": "N/A",
@@ -545,9 +614,11 @@
       "images/mineral-museum-images/uvarovite/u31-2.jpg",
       "images/mineral-museum-images/uvarovite/l31.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": "*Mineral is more than likely Chrome Grossular."
   },
   {
+    "id": "GAR-0032",
     "name": "Uvarovite(?)",
     "locality": "Zermatt, Switzerland",
     "dimensions": "N/A",
@@ -563,9 +634,11 @@
       "images/mineral-museum-images/uvarovite/u32-2.jpg",
       "images/mineral-museum-images/uvarovite/l32.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": "*Whether or not this mineral is truly Uvarovite or if its locality is accurate is under debate."
   },
   {
+    "id": "GAR-0033",
     "name": "Uvarovite",
     "locality": "Hatta Mine, Tanukiiwa, Hokkaido, Japan",
     "dimensions": "N/A",
@@ -581,9 +654,11 @@
       "images/mineral-museum-images/uvarovite/u33-2.jpg",
       "images/mineral-museum-images/uvarovite/l33.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0034",
     "name": "Uvarovite",
     "locality": "Prae Quarry, Framura, La Spezia Province, Liguria, Italy",
     "dimensions": "N/A",
@@ -599,9 +674,11 @@
       "images/mineral-museum-images/uvarovite/u34-2.jpg",
       "images/mineral-museum-images/uvarovite/l34.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0035",
     "name": "Uvarovite",
     "locality": "Caledonia Mine, Holguín Province, Cuba",
     "dimensions": "N/A",
@@ -616,9 +693,11 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u35-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0036",
     "name": "Uvarovite",
     "locality": "Outokumpu, Finland",
     "dimensions": "N/A",
@@ -636,9 +715,11 @@
       "images/mineral-museum-images/uvarovite/l36-1.jpg",
       "images/mineral-museum-images/uvarovite/l36-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   },
   {
+    "id": "GAR-0037",
     "name": "Uvarovite",
     "locality": "Philippines",
     "dimensions": "N/A",
@@ -653,6 +734,7 @@
     "images": [
       "images/mineral-museum-images/uvarovite/u37-2.jpg"
     ],
+    "thumbnail": "images/mineral-museum-images/uvarovite/thumbnails/-thumb.jpg",
     "description": ""
   }
 ]

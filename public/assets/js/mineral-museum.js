@@ -4,12 +4,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = document.getElementById("search");
   const loadMoreBtn = document.getElementById("load-more");
 
-  // Pagination
   const PAGE_SIZE = 24;
   let currentPage = 1;
   let filteredMinerals = [];
+  let minerals = [];
 
-  // Filter inputs
+  // Modes:
+  // "ALL" | "FEATURED" | categoryName
+  let activeCategory = "FEATURED";
+  let activeSubcategory = null;
+
   const filterLocality = document.getElementById("filter-locality");
   const filterSize = document.getElementById("filter-size");
   const filterWeightMin = document.getElementById("filter-weight-min");
@@ -19,7 +23,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const filterSystem = document.getElementById("filter-system");
   const filterReset = document.getElementById("filter-reset");
 
-  // Modal elements
   const modal = document.getElementById("mineral-modal");
   const modalImage = document.getElementById("modal-image");
   const modalName = document.getElementById("modal-name");
@@ -37,11 +40,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   let currentGalleryImages = [];
   let currentImageIndex = 0;
 
-  let activeCategory = "All";
-  let activeSubcategory = null;
-
-  let minerals = [];
-
   /* ---------------- Modal ---------------- */
 
   function openMineralModal(card) {
@@ -58,9 +56,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     gallery.innerHTML = "";
     currentGalleryImages = [card.dataset.image];
+
     if (card.dataset.images) {
       currentGalleryImages.push(...card.dataset.images.split(","));
     }
+
     currentImageIndex = 0;
 
     currentGalleryImages.forEach((src, index) => {
@@ -77,22 +77,30 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
-  modal.addEventListener("click", e => e.target === modal && modal.classList.add("hidden"));
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
 
   document.addEventListener("keydown", e => {
     if (modal.classList.contains("hidden")) return;
+
     if (e.key === "Escape") modal.classList.add("hidden");
+
     if (e.key === "ArrowLeft" && currentGalleryImages.length > 1) {
-      currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+      currentImageIndex =
+        (currentImageIndex - 1 + currentGalleryImages.length) %
+        currentGalleryImages.length;
       modalImage.src = currentGalleryImages[currentImageIndex];
     }
+
     if (e.key === "ArrowRight" && currentGalleryImages.length > 1) {
-      currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+      currentImageIndex =
+        (currentImageIndex + 1) % currentGalleryImages.length;
       modalImage.src = currentGalleryImages[currentImageIndex];
     }
   });
 
-  /* ---------------- Rendering ---------------- */
+  /* ---------------- CARD ---------------- */
 
   function createCard(mineral) {
     const card = document.createElement("div");
@@ -108,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       system: mineral.system,
       selfCollected: mineral.selfCollected?.toLowerCase() === "yes" ? "Yes" : "No",
       image: mineral.image,
-      images: mineral.images.join(","),
+      images: (mineral.images || []).join(","),
       description: mineral.description,
       category: mineral.category,
       subcategory: mineral.subcategory || ""
@@ -116,13 +124,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     card.innerHTML = `
       <img src="${mineral.image}" alt="${mineral.name}" loading="lazy">
-      <h3>${mineral.name}</h3>
+      <h3>
+        ${mineral.name}
+      </h3>
       <p>${mineral.locality}</p>
     `;
 
     card.addEventListener("click", () => openMineralModal(card));
     return card;
   }
+
+  /* ---------------- RENDER ---------------- */
 
   function renderPage(reset = false) {
     if (reset) {
@@ -132,17 +144,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const start = (currentPage - 1) * PAGE_SIZE;
     const end = start + PAGE_SIZE;
-    const pageItems = filteredMinerals.slice(start, end);
 
-    pageItems.forEach(m => grid.appendChild(createCard(m)));
+    filteredMinerals.slice(start, end).forEach(m => {
+      grid.appendChild(createCard(m));
+    });
 
-    loadMoreBtn.style.display = end < filteredMinerals.length ? "block" : "none";
+    loadMoreBtn.style.display =
+      end < filteredMinerals.length ? "block" : "none";
+
     currentPage++;
   }
 
-  /* ---------------- Filtering ---------------- */
+  /* ---------------- FILTERING ---------------- */
 
-  function getCurrentFilters() {
+  function getFilters() {
     return {
       locality: filterLocality.value,
       size: filterSize.value,
@@ -155,22 +170,45 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function applyFilters() {
-    const filters = getCurrentFilters();
+    const f = getFilters();
+
     filteredMinerals = minerals.filter(m => {
-      if (activeCategory !== "All" && m.category !== activeCategory) return false;
-      if (activeSubcategory && m.subcategory !== activeSubcategory) return false;
-      if (searchInput.value && !m.name.toLowerCase().includes(searchInput.value.toLowerCase())) return false;
-      if (filters.locality && !m.locality.toLowerCase().includes(filters.locality.toLowerCase())) return false;
-      if (filters.size && m.size !== filters.size) return false;
+      // ---------------- FEATURED BLEND ----------------
+      if (activeCategory === "FEATURED" && !m.featured) {
+        return false;
+      }
 
+      // ---------------- CATEGORY FILTER ----------------
+      if (activeCategory !== "FEATURED" && activeCategory !== "All") {
+        if (m.category !== activeCategory) return false;
+      }
+
+      // Subcategory filter
+      if (activeSubcategory && m.subcategory !== activeSubcategory) {
+        return false;
+      }
+
+      // Search
+      if (
+        searchInput.value &&
+        !m.name.toLowerCase().includes(searchInput.value.toLowerCase())
+      ) return false;
+
+      // Locality
+      if (f.locality && !m.locality.toLowerCase().includes(f.locality.toLowerCase())) return false;
+
+      // Size
+      if (f.size && m.size !== f.size) return false;
+
+      // Numeric filters
       const weight = parseFloat(m.weight) || 0;
-      const price = parseFloat(m.price?.replace("$", "")) || 0;
+      const price = parseFloat((m.price || "").replace("$", "")) || 0;
 
-      if (filters.weightMin && weight < filters.weightMin) return false;
-      if (filters.weightMax && weight > filters.weightMax) return false;
-      if (filters.priceMin && price < filters.priceMin) return false;
-      if (filters.priceMax && price > filters.priceMax) return false;
-      if (filters.system && m.system !== filters.system) return false;
+      if (f.weightMin && weight < f.weightMin) return false;
+      if (f.weightMax && weight > f.weightMax) return false;
+      if (f.priceMin && price < f.priceMin) return false;
+      if (f.priceMax && price > f.priceMax) return false;
+      if (f.system && m.system !== f.system) return false;
 
       return true;
     });
@@ -178,17 +216,38 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderPage(true);
   }
 
-  /* ---------------- Categories ---------------- */
+  /* ---------------- CATEGORY UI ---------------- */
 
-  function highlightActive(el) {
+  function highlight(el) {
     categoryList.querySelectorAll("li").forEach(li => li.classList.remove("active"));
     el.classList.add("active");
   }
 
-  /* ---------------- Init ---------------- */
+  /* ---------------- INIT ---------------- */
 
-  const response = await fetch("minerals.json");
-  minerals = await response.json();
+const mineralFiles = [
+  "minerals/silicates/garnets/uvarovites/minerals.json",
+  "minerals/silicates/quartz/quartz.json",
+  "minerals/silicates/beryl/beryl.json"
+];
+
+const responses = await Promise.all(
+  mineralFiles.map(async f => {
+    try {
+      const r = await fetch(f);
+      if (!r.ok) {
+        console.warn("Failed to load:", f);
+        return [];
+      }
+      return await r.json();
+    } catch (err) {
+      console.warn("Error loading:", f, err);
+      return [];
+    }
+  })
+);
+
+minerals = responses.flat();
 
   const categoryMap = {};
   minerals.forEach(m => {
@@ -196,59 +255,97 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (m.subcategory) categoryMap[m.category].add(m.subcategory);
   });
 
+  // FEATURED (default landing)
+  const featuredItem = document.createElement("li");
+  featuredItem.textContent = "Featured";
+  featuredItem.classList.add("active");
+
+  featuredItem.onclick = () => {
+    activeCategory = "FEATURED";
+    activeSubcategory = null;
+    highlight(featuredItem);
+    applyFilters();
+  };
+
+  categoryList.appendChild(featuredItem);
+
+  // ALL
   const allItem = document.createElement("li");
   allItem.textContent = "All";
-  allItem.classList.add("active");
+
   allItem.onclick = () => {
     activeCategory = "All";
     activeSubcategory = null;
-    highlightActive(allItem);
+    highlight(allItem);
     applyFilters();
   };
+
   categoryList.appendChild(allItem);
 
+  // Categories
   Object.entries(categoryMap).forEach(([cat, subs]) => {
     const li = document.createElement("li");
     li.textContent = cat;
+
     li.onclick = () => {
       activeCategory = cat;
       activeSubcategory = null;
-      highlightActive(li);
+      highlight(li);
       applyFilters();
     };
 
     if (subs.size) {
       const ul = document.createElement("ul");
+
       subs.forEach(sub => {
         const subLi = document.createElement("li");
         subLi.textContent = sub;
+
         subLi.onclick = e => {
           e.stopPropagation();
           activeCategory = cat;
           activeSubcategory = sub;
-          highlightActive(subLi);
+          highlight(subLi);
           applyFilters();
         };
+
         ul.appendChild(subLi);
       });
+
       li.appendChild(ul);
     }
 
     categoryList.appendChild(li);
   });
 
-  /* ---------------- Events ---------------- */
+  /* ---------------- EVENTS ---------------- */
 
-  [searchInput, filterLocality, filterSize, filterWeightMin, filterWeightMax,
-   filterPriceMin, filterPriceMax, filterSystem]
-   .forEach(el => el.addEventListener("input", applyFilters));
+  [
+    searchInput,
+    filterLocality,
+    filterSize,
+    filterWeightMin,
+    filterWeightMax,
+    filterPriceMin,
+    filterPriceMax,
+    filterSystem
+  ].forEach(el => el.addEventListener("input", applyFilters));
 
   filterReset.addEventListener("click", () => {
-    [filterLocality, filterSize, filterWeightMin, filterWeightMax,
-     filterPriceMin, filterPriceMax, filterSystem].forEach(i => i.value = "");
-    activeCategory = "All";
+    [
+      filterLocality,
+      filterSize,
+      filterWeightMin,
+      filterWeightMax,
+      filterPriceMin,
+      filterPriceMax,
+      filterSystem
+    ].forEach(i => (i.value = ""));
+
+    activeCategory = "FEATURED";
     activeSubcategory = null;
-    highlightActive(allItem);
+
+    highlight(featuredItem);
     applyFilters();
   });
 
