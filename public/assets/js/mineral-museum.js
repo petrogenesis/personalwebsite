@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     card.innerHTML = `
-      <img src="${mineral.image}" alt="${mineral.name}" loading="lazy">
+      <img src="${mineral.thumbnail || mineral.image}" alt="${mineral.name}" loading="lazy">
       <h3>
         ${mineral.name}
       </h3>
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* ---------------- INIT ---------------- */
 
 const mineralFiles = [
-  "minerals/silicates/garnets/uvarovites/minerals.json",
+  "minerals/silicates/garnets/uvarovites.json",
   "minerals/silicates/quartz/quartz.json",
   "minerals/silicates/beryl/beryl.json"
 ];
