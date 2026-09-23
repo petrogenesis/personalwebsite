@@ -1,0 +1,543 @@
+/*
+	Cameron's Rocks -- mineral-museum.css
+	Styles specific to mineralmuseum.html: the museum layout, sidebar
+	category list, mineral grid/cards, modal + gallery, filters panel,
+	"Load More" button, and the dark-mode theme used only on this page.
+	Link this AFTER main.css/base.css on the mineral museum page only.
+*/
+
+/* ---------------- Mineral Museum Container ---------------- */
+.museum-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Sidebar for categories */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* Main content area */
+.museum-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Search bar */
+#search {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ---------------- Mineral Grid ---------------- */
+.mineral-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px); /* fixed card width */
+  justify-content: start;   /* align cards to the left */
+  gap: 16px 16px;           /* row-gap and column-gap */
+  padding: 0;
+}
+/* ---------------- Mineral Card ---------------- */
+.mineral-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 250px;         /* card width limit */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.mineral-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image inside card */
+.mineral-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* ensures square image */
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Text inside card */
+.mineral-card h3,
+.mineral-card p {
+  margin: 4px 8px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* ---------------- Modal ---------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Modal main image */
+.modal-content img#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+/* Modal text */
+.modal-content h2 {
+  margin: 8px 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Modal info section */
+.modal-info p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 16px;           /* move slightly down */
+  right: 16px;         /* move slightly left */
+  font-size: 2.5rem;   /* bigger size for mobile */
+  font-weight: bold;
+  color: #9a9a9a;      /* bright color for visibility */
+  cursor: pointer;
+  z-index: 1010;       /* make sure it's above modal content */
+  user-select: none;   /* prevent accidental text selection */
+  padding: 8px;        /* give it a clickable area */
+  border-radius: 50%;  /* optional: make it circular */
+  background: rgba(255,255,255,0.8); /* optional: semi-transparent bg */
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+
+/* ---------------- Modal Gallery Thumbnails ---------------- */
+.modal-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.modal-gallery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-gallery img:hover,
+.modal-gallery img.active {
+  opacity: 1;
+  transform: scale(1.05);
+  border: 2px solid #007BFF; /* highlight for active thumbnail */
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .museum-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .museum-main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .mineral-card {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .modal-gallery img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #search {
+    max-width: 100%;
+  }
+}
+
+/* Sidebar + layout */
+.museum-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  width: 400px;
+  flex-shrink: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 70px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 6px 4px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: #e0e0e0;
+}
+
+.sidebar ul li.active {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Search bar */
+#search {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 16px;
+}
+
+/* Grid and cards */
+.mineral-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 220px);
+  justify-content: start;
+  gap: 16px;
+  padding: 0;
+}
+
+.mineral-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.mineral-card:hover {
+  transform: translateY(-5px);
+}
+
+.mineral-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.mineral-card h3,
+.mineral-card p {
+  margin: 4px 8px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* Museum header */
+.museum-header {
+  text-align: center;        /* center title and search bar */
+  margin-bottom: 30px;       /* space between header and grid */
+}
+
+.museum-header h1 {
+  font-size: 2.5rem;         /* larger title */
+  margin-bottom: 16px;       /* space between title and search */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Mineral Museum Search Bar */
+.museum-header #search {
+  display: inline-block;     /* inline-block so it stays centered */
+  width: 60%;                /* adjust width */
+  max-width: 500px;          /* optional max width */
+  padding: 12px 20px;        /* larger input */
+  font-size: 1.2rem;         /* bigger text */
+  border: 2px solid #ccc;    /* subtle border */
+  border-radius: 8px;        /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.museum-header #search:focus {
+  border-color: #666;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ---------------- Filters Panel ---------------- */
+.filters-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filters-panel label {
+  font-weight: bold;          /* make text bold */
+  font-size: 1rem;            /* slightly larger text */
+}
+
+.filters-panel input,
+.filters-panel select {
+  font-size: 1rem;            /* larger text in inputs */
+  padding: 6px 10px;          /* more comfortable padding */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.filters-panel button {
+  font-size: 1rem;            /* larger button text */
+  font-weight: bold;           /* bold text */
+  padding: 6px 12px;          /* comfortable padding */
+  border-radius: 6px;
+  border: none;
+  background-color: #9dadbe;  /* blue button */
+  color: #fff;                /* white text */
+  cursor: pointer;
+  display: flex;              /* for centering text */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+  transition: background 0.2s ease;
+}
+
+.filters-panel button:hover {
+  background-color: #0056b3;  /* darker on hover */
+}
+
+/* Fix select dropdown text vertical alignment */
+.filters-panel select {
+    font-size: 1rem;           /* keep text slightly larger */
+    padding: 6px 10px;          /* ensure some horizontal padding */
+    height: 34px;               /* fixed height to fit text */
+    line-height: 1.2;           /* align text vertically */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;     /* include padding in height */
+    appearance: none;           /* remove default arrow style for uniformity */
+}
+
+/* Optional: adjust option padding inside select for some browsers */
+.filters-panel select option {
+    padding: 4px 6px;
+}
+
+
+/* ---------------- Load More button ---------------- */
+.load-more {
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* ---------------- DARK MODE ---------------- */
+
+body.dark-mode {
+  background: #0f0f10;
+  color: #e6e6e6;
+}
+
+/* Header / layout */
+body.dark-mode #header,
+body.dark-mode .sidebar,
+body.dark-mode .museum-header,
+body.dark-mode .filters-panel {
+  background: #161618;
+  color: #e6e6e6;
+  border-color: #2a2a2a;
+}
+
+/* Cards */
+body.dark-mode .mineral-card {
+  background: #1a1a1d;
+  color: #e6e6e6;
+  border: 1px solid #2a2a2a;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background: #1a1a1d;
+  color: #e6e6e6;
+  border: 1px solid #333;
+}
+
+/* Links / hover */
+body.dark-mode a {
+  color: #9ad1ff;
+}
+
+body.dark-mode .mineral-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Modal */
+body.dark-mode .modal-content {
+  background: #161618;
+  color: #e6e6e6;
+}
+
+/* Sidebar category hover fix */
+.sidebar ul li {
+    color: #eaeaea;
+}
+
+.sidebar ul li:hover {
+    background: rgba(255, 255, 255, 0.08); /* soft highlight instead of white block */
+    color: #ffffff;
+}
+
+/* Fix submenu hover (subcategories) */
+.sidebar ul li ul li:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.museum-header h1 {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.mineral-card h3 {
+    color: #f2f2f2;
+    margin-top: 8px;
+}
+
+.mineral-card p {
+    color: #cfcfcf;
+}
+
+/* ---------------- MODAL DARK MODE FIX ---------------- */
+
+.modal-content {
+    background: #141821;   /* dark panel */
+    color: #eaeaea;        /* default text */
+}
+
+/* All modal text blocks */
+.modal-content h2,
+.modal-content p,
+.modal-content strong,
+.modal-content span {
+    color: #eaeaea !important;
+}
+
+/* Optional: make labels slightly softer than values */
+.modal-content strong {
+    color: #ffffff;
+}
+
+/* Gallery background consistency */
+.modal-gallery {
+    background: transparent;
+}
+
+/* Close button visibility */
+.modal .close {
+    color: #ffffff;
+}
+/* ---------------- Filters panel layout tweak ---------------- */
+/* Moved from an inline <style> block in mineralmuseum.html so all */
+/* mineral-museum.html styling lives in one place. */
+.filters-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+.filters-panel label, .filters-panel input, .filters-panel select, .filters-panel button {
+    font-size: 0.85rem;
+    height: 30px;
+    padding: 2px 4px;
+}
+.filters-panel h3 {
+    flex-basis: 100%;
+    margin: 0 0 4px 0;
+}

@@ -1,0 +1,35 @@
+/*
+	Cameron's Rocks -- projects.css
+	Styles specific to projects.html: the project index list.
+	Link this AFTER main.css/base.css on the projects page only.
+	(Kept separate now so it's ready whenever projects.html is added
+	to this pass -- it wasn't part of the files shared this round.)
+*/
+
+/* Project Index */
+.project-index {
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.project-index ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-index li {
+  margin: 8px 0;
+}
+
+.project-index a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+.project-index a:hover {
+  text-decoration: underline;
+}
+

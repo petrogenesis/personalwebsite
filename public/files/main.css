@@ -1,15 +1,13 @@
 /*
-	Cameron's Rocks -- main.css
+	Cameron's Rocks -- base.css
 	Shared/global styles used across every page: reset, typography,
 	grid system, buttons, header/nav, banner, main layout, CTA, footer,
-	generic responsive rules, and the small set of styles specific to
-	projects.html (Project Index list, section headers). Originally
-	based on the HTML5 UP "Twenty" template.
+	and generic responsive rules. Originally based on the HTML5 UP
+	"Twenty" template.
 
-	Page-specific styling for the two larger, self-contained sections
-	of the site has been split out into separate files -- see
-	blog.css and mineral-museum.css. Every page should still link
-	this file first.
+	Page-specific styling (blog, mineral museum, projects) has been
+	split out into separate files -- see blog.css, mineral-museum.css,
+	and projects.css. Every page should still link this file first.
 */
 
 @import url("fontawesome-all.min.css");
@@ -3390,37 +3388,3 @@ input, select, textarea {
   scroll-margin-top: 120px;
 }
 
-
-/* ---------------- projects.html: Project Index + section headers ---------------- */
-.project-index {
-  margin: 40px auto;
-  max-width: 800px;
-  text-align: center;
-}
-
-.project-index ul {
-  list-style: none;
-  padding: 0;
-}
-
-.project-index li {
-  margin: 8px 0;
-}
-
-.project-index a {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2e2e2e;
-  text-decoration: none;
-}
-
-.project-index a:hover {
-  text-decoration: underline;
-}
-
-h3.fenics-header {
-  text-align: center;
-  font-size: 2rem; /* adjust as you like */
-  font-weight: bold;
-  font-family: monospace;
-}
