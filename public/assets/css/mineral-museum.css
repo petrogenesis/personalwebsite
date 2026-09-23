@@ -142,18 +142,29 @@
 /* Close button */
 .close {
   position: absolute;
-  top: 16px;           /* move slightly down */
-  right: 16px;         /* move slightly left */
-  font-size: 2.5rem;   /* bigger size for mobile */
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;    /* sized to fit the circle, not stretch it */
+  line-height: 1;
   font-weight: bold;
-  color: #9a9a9a;      /* bright color for visibility */
+  color: #222;          /* dark icon for contrast against the light badge */
   cursor: pointer;
-  z-index: 1010;       /* make sure it's above modal content */
-  user-select: none;   /* prevent accidental text selection */
-  padding: 8px;        /* give it a clickable area */
-  border-radius: 50%;  /* optional: make it circular */
-  background: rgba(255,255,255,0.8); /* optional: semi-transparent bg */
+  z-index: 1010;
+  user-select: none;
+  border-radius: 50%;   /* a fixed-size flex box makes this a true circle */
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
   transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.close:hover {
+  background: #ffffff;
+  transform: scale(1.08);
 }
 
 
@@ -350,58 +361,127 @@
 .filters-panel {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-end;
+  gap: 14px 18px;
   margin-bottom: 16px;
 }
 
-.filters-panel label {
-  font-weight: bold;          /* make text bold */
-  font-size: 1rem;            /* slightly larger text */
+/* Each label + control is grouped so they can never be split across
+   a line wrap, and each control gets a sane, compact width instead
+   of stretching across the row. */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.filters-panel input,
-.filters-panel select {
-  font-size: 1rem;            /* larger text in inputs */
-  padding: 6px 10px;          /* more comfortable padding */
+.filter-group label {
+  font-weight: bold;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.filter-group input,
+.filter-group select {
+  font-size: 0.95rem;
+  padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 34px;
+  width: 140px;          /* compact, consistent control width */
+}
+
+.filter-group select {
+  line-height: 1.2;
+  appearance: none;
+}
+
+.filter-group select option {
+  padding: 4px 6px;
+}
+
+/* Locality gets a little extra room since it's free text */
+.filter-wide input {
+  width: 180px;
+}
+
+/* Number filters (weight/price min/max) can be narrower */
+.filter-narrow input {
+  width: 100px;
+}
+
+/* Toggle groups (Personally Collected / For Sale) lay out as a single
+   inline checkbox + label instead of a stacked field. */
+.filter-toggle {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-toggle label {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Custom checkbox: a visible box with a clear checked state, since the
+   site-wide "appearance: none" reset otherwise strips the native
+   checkmark and leaves no way to tell it's toggled. */
+.filter-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid #9dadbe;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-toggle input[type="checkbox"]:checked {
+  background: #3fb1a3;
+  border-color: #3fb1a3;
+}
+
+.filter-toggle input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-reset-group {
+  justify-content: flex-end;
 }
 
 .filters-panel button {
-  font-size: 1rem;            /* larger button text */
-  font-weight: bold;           /* bold text */
-  padding: 6px 12px;          /* comfortable padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  height: 34px;
   border-radius: 6px;
   border: none;
-  background-color: #9dadbe;  /* blue button */
-  color: #fff;                /* white text */
+  background-color: #9dadbe;
+  color: #fff;
   cursor: pointer;
-  display: flex;              /* for centering text */
-  align-items: center;        /* vertical center */
-  justify-content: center;    /* horizontal center */
+  white-space: nowrap;
   transition: background 0.2s ease;
 }
 
 .filters-panel button:hover {
-  background-color: #0056b3;  /* darker on hover */
-}
-
-/* Fix select dropdown text vertical alignment */
-.filters-panel select {
-    font-size: 1rem;           /* keep text slightly larger */
-    padding: 6px 10px;          /* ensure some horizontal padding */
-    height: 34px;               /* fixed height to fit text */
-    line-height: 1.2;           /* align text vertically */
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;     /* include padding in height */
-    appearance: none;           /* remove default arrow style for uniformity */
-}
-
-/* Optional: adjust option padding inside select for some browsers */
-.filters-panel select option {
-    padding: 4px 6px;
+  background-color: #0056b3;
 }
 
 
@@ -479,6 +559,27 @@ body.dark-mode .modal-content {
     background: rgba(255, 255, 255, 0.06);
 }
 
+/* ---------------- Subcategory nesting ---------------- */
+/* Indent nested (subcategory) lists a full tab-stop past their parent
+   category, and prefix each one with a small folder icon so the
+   parent/child relationship is obvious at a glance. */
+.sidebar ul li ul {
+    padding-left: 28px;
+    margin-top: 4px;
+}
+
+.sidebar ul li ul li {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sidebar ul li ul li .icon {
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
 .museum-header h1 {
     color: #ffffff;
     font-weight: 700;
@@ -501,11 +602,12 @@ body.dark-mode .modal-content {
     color: #eaeaea;        /* default text */
 }
 
-/* All modal text blocks */
+/* All modal text blocks (but not the close button badge, which needs
+   its own dark-on-light color for contrast against its light circle) */
 .modal-content h2,
 .modal-content p,
 .modal-content strong,
-.modal-content span {
+.modal-content span:not(.close) {
     color: #eaeaea !important;
 }
 
@@ -517,27 +619,4 @@ body.dark-mode .modal-content {
 /* Gallery background consistency */
 .modal-gallery {
     background: transparent;
-}
-
-/* Close button visibility */
-.modal .close {
-    color: #ffffff;
-}
-/* ---------------- Filters panel layout tweak ---------------- */
-/* Moved from an inline <style> block in mineralmuseum.html so all */
-/* mineral-museum.html styling lives in one place. */
-.filters-panel {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-}
-.filters-panel label, .filters-panel input, .filters-panel select, .filters-panel button {
-    font-size: 0.85rem;
-    height: 30px;
-    padding: 2px 4px;
-}
-.filters-panel h3 {
-    flex-basis: 100%;
-    margin: 0 0 4px 0;
 }

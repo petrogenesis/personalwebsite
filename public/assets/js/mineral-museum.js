@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const filterPriceMin = document.getElementById("filter-price-min");
   const filterPriceMax = document.getElementById("filter-price-max");
   const filterSystem = document.getElementById("filter-system");
+  const filterPersonal = document.getElementById("filter-personal");
+  const filterForSale = document.getElementById("filter-forsale");
   const filterReset = document.getElementById("filter-reset");
 
   const modal = document.getElementById("mineral-modal");
@@ -40,6 +42,26 @@ document.addEventListener("DOMContentLoaded", async () => {
   let currentGalleryImages = [];
   let currentImageIndex = 0;
 
+  /* ---------------- Status helpers ---------------- */
+  // Shared so the sidebar categories, the toggle filters, and the card/
+  // modal rendering all agree on what counts as "personally collected"
+  // or "for sale" for a given mineral.
+
+  function isSelfCollected(m) {
+    return (m.selfCollected || "").toString().toLowerCase() === "yes";
+  }
+
+  function isForSale(m) {
+    // Prefer an explicit "forSale" field on the mineral if one is set.
+    if (m.forSale !== undefined && m.forSale !== null && m.forSale !== "") {
+      return m.forSale.toString().toLowerCase() === "yes";
+    }
+    // Otherwise fall back to inferring it from the price: anything
+    // other than "NFS" (Not For Sale) or a blank price counts as for sale.
+    const price = (m.price || "").toString().trim().toUpperCase();
+    return price !== "" && price !== "NFS";
+  }
+
   /* ---------------- Modal ---------------- */
 
   function openMineralModal(card) {
@@ -49,7 +71,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     modalDimensions.textContent = card.dataset.dimensions || "N/A";
     modalSize.textContent = card.dataset.size || "N/A";
     modalWeight.textContent = card.dataset.weight;
-    modalPrice.textContent = card.dataset.price;
+
+    if (card.dataset.forSale === "Yes" && card.dataset.ebayLink) {
+      modalPrice.innerHTML = "";
+      const priceLink = document.createElement("a");
+      priceLink.href = card.dataset.ebayLink;
+      priceLink.target = "_blank";
+      priceLink.rel = "noopener noreferrer";
+      priceLink.textContent = card.dataset.price;
+      modalPrice.appendChild(priceLink);
+    } else {
+      modalPrice.textContent = card.dataset.price;
+    }
+
     modalSystem.textContent = card.dataset.system;
     modalSelfCollected.textContent = card.dataset.selfCollected;
     modalDescription.textContent = card.dataset.description;
@@ -114,7 +148,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       weight: mineral.weight,
       price: mineral.price,
       system: mineral.system,
-      selfCollected: mineral.selfCollected?.toLowerCase() === "yes" ? "Yes" : "No",
+      selfCollected: isSelfCollected(mineral) ? "Yes" : "No",
+      forSale: isForSale(mineral) ? "Yes" : "No",
+      ebayLink: mineral.ebayLink || "",
       image: mineral.image,
       images: (mineral.images || []).join(","),
       description: mineral.description,
@@ -165,7 +201,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       weightMax: parseFloat(filterWeightMax.value),
       priceMin: parseFloat(filterPriceMin.value),
       priceMax: parseFloat(filterPriceMax.value),
-      system: filterSystem.value
+      system: filterSystem.value,
+      personalOnly: filterPersonal.checked,
+      forSaleOnly: filterForSale.checked
     };
   }
 
@@ -178,8 +216,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         return false;
       }
 
+      // ---------------- PERSONALLY COLLECTED CATEGORY ----------------
+      if (activeCategory === "PERSONAL" && !isSelfCollected(m)) {
+        return false;
+      }
+
+      // ---------------- FOR SALE CATEGORY ----------------
+      if (activeCategory === "FORSALE" && !isForSale(m)) {
+        return false;
+      }
+
       // ---------------- CATEGORY FILTER ----------------
-      if (activeCategory !== "FEATURED" && activeCategory !== "All") {
+      if (
+        activeCategory !== "FEATURED" &&
+        activeCategory !== "PERSONAL" &&
+        activeCategory !== "FORSALE" &&
+        activeCategory !== "All"
+      ) {
         if (m.category !== activeCategory) return false;
       }
 
@@ -209,6 +262,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (f.priceMin && price < f.priceMin) return false;
       if (f.priceMax && price > f.priceMax) return false;
       if (f.system && m.system !== f.system) return false;
+
+      // ---------------- TOGGLE FILTERS ----------------
+      // Independent of category/sidebar selection -- these narrow down
+      // whatever is currently showing, e.g. "Silicates" + "For sale" together.
+      if (f.personalOnly && !isSelfCollected(m)) return false;
+      if (f.forSaleOnly && !isForSale(m)) return false;
 
       return true;
     });
@@ -269,6 +328,32 @@ minerals = responses.flat();
 
   categoryList.appendChild(featuredItem);
 
+  // PERSONALLY COLLECTED
+  const personalItem = document.createElement("li");
+  personalItem.textContent = "Personally Collected";
+
+  personalItem.onclick = () => {
+    activeCategory = "PERSONAL";
+    activeSubcategory = null;
+    highlight(personalItem);
+    applyFilters();
+  };
+
+  categoryList.appendChild(personalItem);
+
+  // FOR SALE
+  const forSaleItem = document.createElement("li");
+  forSaleItem.textContent = "For Sale";
+
+  forSaleItem.onclick = () => {
+    activeCategory = "FORSALE";
+    activeSubcategory = null;
+    highlight(forSaleItem);
+    applyFilters();
+  };
+
+  categoryList.appendChild(forSaleItem);
+
   // ALL
   const allItem = document.createElement("li");
   allItem.textContent = "All";
@@ -299,7 +384,7 @@ minerals = responses.flat();
 
       subs.forEach(sub => {
         const subLi = document.createElement("li");
-        subLi.textContent = sub;
+        subLi.innerHTML = `<span class="icon solid fa-folder"></span>${sub}`;
 
         subLi.onclick = e => {
           e.stopPropagation();
@@ -328,7 +413,9 @@ minerals = responses.flat();
     filterWeightMax,
     filterPriceMin,
     filterPriceMax,
-    filterSystem
+    filterSystem,
+    filterPersonal,
+    filterForSale
   ].forEach(el => el.addEventListener("input", applyFilters));
 
   filterReset.addEventListener("click", () => {
@@ -341,6 +428,9 @@ minerals = responses.flat();
       filterPriceMax,
       filterSystem
     ].forEach(i => (i.value = ""));
+
+    filterPersonal.checked = false;
+    filterForSale.checked = false;
 
     activeCategory = "FEATURED";
     activeSubcategory = null;

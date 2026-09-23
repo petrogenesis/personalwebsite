@@ -54,44 +54,70 @@
 
                 <!-- Filters -->
                 <div class="filters-panel">
-                    <label for="filter-locality">Locality:</label>
-                    <input type="text" id="filter-locality" placeholder="Enter locality">
+                    <div class="filter-group filter-toggle">
+                        <input type="checkbox" id="filter-personal">
+                        <label for="filter-personal">Personally Collected</label>
+                    </div>
 
-                    <label for="filter-size">Size:</label>
-                    <select id="filter-size">
-                        <option value="">All</option>
-                        <option value="Micromount">Micromount</option>
-                        <option value="Thumbnail">Thumbnail</option>
-                        <option value="Miniature">Miniature</option>
-                        <option value="Small Cabinet">Small Cabinet</option>
-                        <option value="Cabinet">Cabinet</option>
-                    </select>
+                    <div class="filter-group filter-toggle">
+                        <input type="checkbox" id="filter-forsale">
+                        <label for="filter-forsale">For Sale</label>
+                    </div>
 
-                    <label for="filter-weight-min">Weight Min:</label>
-                    <input type="number" id="filter-weight-min" placeholder="0">
+                    <div class="filter-group filter-wide">
+                        <label for="filter-locality">Locality</label>
+                        <input type="text" id="filter-locality" placeholder="Enter locality">
+                    </div>
 
-                    <label for="filter-weight-max">Weight Max:</label>
-                    <input type="number" id="filter-weight-max" placeholder="">
+                    <div class="filter-group">
+                        <label for="filter-size">Size</label>
+                        <select id="filter-size">
+                            <option value="">All</option>
+                            <option value="Micromount">Micromount</option>
+                            <option value="Thumbnail">Thumbnail</option>
+                            <option value="Miniature">Miniature</option>
+                            <option value="Small Cabinet">Small Cabinet</option>
+                            <option value="Cabinet">Cabinet</option>
+                        </select>
+                    </div>
 
-                    <label for="filter-price-min">Price Min:</label>
-                    <input type="number" id="filter-price-min" placeholder="0">
+                    <div class="filter-group filter-narrow">
+                        <label for="filter-weight-min">Weight Min</label>
+                        <input type="number" id="filter-weight-min" placeholder="0">
+                    </div>
 
-                    <label for="filter-price-max">Price Max:</label>
-                    <input type="number" id="filter-price-max" placeholder="">
+                    <div class="filter-group filter-narrow">
+                        <label for="filter-weight-max">Weight Max</label>
+                        <input type="number" id="filter-weight-max" placeholder="">
+                    </div>
 
-                    <label for="filter-system">Crystal System:</label>
-                    <select id="filter-system">
-                        <option value="">All</option>
-                        <option value="Triclinic">Triclinic</option>
-                        <option value="Monoclinic">Monoclinic</option>
-                        <option value="Orthorhombic">Orthorhombic</option>
-                        <option value="Tetragonal">Tetragonal</option>
-                        <option value="Trigonal">Trigonal</option>
-                        <option value="Hexagonal">Hexagonal</option>
-                        <option value="Cubic">Cubic</option>
-                    </select>
+                    <div class="filter-group filter-narrow">
+                        <label for="filter-price-min">Price Min</label>
+                        <input type="number" id="filter-price-min" placeholder="0">
+                    </div>
 
-                    <button id="filter-reset">Reset Filters</button>
+                    <div class="filter-group filter-narrow">
+                        <label for="filter-price-max">Price Max</label>
+                        <input type="number" id="filter-price-max" placeholder="">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-system">Crystal System</label>
+                        <select id="filter-system">
+                            <option value="">All</option>
+                            <option value="Triclinic">Triclinic</option>
+                            <option value="Monoclinic">Monoclinic</option>
+                            <option value="Orthorhombic">Orthorhombic</option>
+                            <option value="Tetragonal">Tetragonal</option>
+                            <option value="Trigonal">Trigonal</option>
+                            <option value="Hexagonal">Hexagonal</option>
+                            <option value="Cubic">Cubic</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group filter-reset-group">
+                        <button id="filter-reset">Reset Filters</button>
+                    </div>
                 </div>
 
                 <!-- Mineral grid -->
