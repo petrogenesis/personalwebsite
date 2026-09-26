@@ -1,0 +1,21 @@
+[
+  {
+    "id": "B-AZ-00002",
+    "name": "Wulfenite",
+    "locality": "Durango, Mexico",
+    "dimensions": "12.0 x 7.0 x 10.0 cm",
+    "size": "Cabinet",
+    "weight": "N/A",
+    "price": "$250",
+    "system": "Tetragonal",
+    "selfCollected": "No",
+    "category": "Molybdates",
+    "subcategory": "Wulfenite",
+    "image": "images/mineral-museum-images-thumbnails/wulfenite/B-AZ-00002-1.jpg",
+    "images": ["images/mineral-museum-images/wulfenite/B-AZ-00002-2.jpg",
+        "images/mineral-museum-images/wulfenite/B-AZ-00002-3.jpg",
+        "images/mineral-museum-images/wulfenite/B-AZ-00002-4.JPEG"],
+    "thumbnail": "images/mineral-museum-images-thumbnails/wulfenite/B-AZ-00002-1.jpg",
+    "description": "Purchased at the 2026 Tucson Gem and Mineral Show. Large mexican wulfenite crystals cover a volcanic rock from Durango, Mexico. Some crystals are damaged, and the matrix can be crumbly. Otherwise in great condition."
+  }
+]

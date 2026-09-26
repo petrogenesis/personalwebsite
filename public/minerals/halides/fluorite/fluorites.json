@@ -1,0 +1,36 @@
+[
+  {
+    "id": "S-AZ-00001",
+    "name": "Fluorite",
+    "locality": "Wickenburg, Arizona, USA",
+    "dimensions": "3.0 x 1.0 x 2.0 cm",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "$35",
+    "system": "Cubic",
+    "selfCollected": "Yes",
+    "category": "Halides",
+    "subcategory": "Fluorite",
+    "image": "images/mineral-museum-images-thumbnails/fluorite/S-AZ-00001-1.jpg",
+    "images": [],
+    "thumbnail": "images/mineral-museum-images-thumbnails/fluorite/S-AZ-00001-1.jpg",
+    "description": "Semi-translucent fluorite crystal perched on a quartz matrix. Beautiful in person, needs some cleaning."
+  },
+   {
+    "id": "S-AZ-00006",
+    "name": "Fluorite",
+    "locality": "Wickenburg, Arizona, USA",
+    "dimensions": "4.0 x 1.0 x 2.0 cm",
+    "size": "Miniature",
+    "weight": "N/A",
+    "price": "$55",
+    "system": "Cubic",
+    "selfCollected": "Yes",
+    "category": "Halides",
+    "subcategory": "Fluorite",
+    "image": "images/mineral-museum-images-thumbnails/fluorite/S-AZ-00006-1.jpg",
+    "images": ["images/mineral-museum-images/fluorite/S-AZ-00006-2.jpg"],
+    "thumbnail": "images/mineral-museum-images-thumbnails/fluorite/S-AZ-00006-1.jpg",
+    "description": "Beautiful fluorite crystal with an odd habit perched on quartz. Three additional terminated quartz crystals are also present on the corners. this piece came straight out of the pocket and with enough TLC will look great."
+  }
+]

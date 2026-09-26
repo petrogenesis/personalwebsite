@@ -286,8 +286,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const mineralFiles = [
   "minerals/silicates/garnets/uvarovites.json",
-  "minerals/silicates/quartz/quartz.json",
-  "minerals/silicates/beryl/beryl.json"
+  "minerals/halides/fluorite/fluorites.json",
+  "minerals/molybdates/wulfenite.json",
+  "minerals/carbonates/calcite.json"
 ];
 
 const responses = await Promise.all(
