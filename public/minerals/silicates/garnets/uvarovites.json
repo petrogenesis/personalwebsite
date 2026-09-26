@@ -383,7 +383,6 @@
   },
   {
     "id": "GAR-0020",
-    "featured": true,
     "name": "Uvarovite",
     "locality": "Kazakhstan",
     "dimensions": "N/A",
@@ -461,7 +460,6 @@
   },
   {
     "id": "GAR-0024",
-    "featured": true,
     "name": "Uvarovite",
     "locality": "Saranovskii Mine, Saranovskaya, Gorozavodskii, Perm Krai, Russia",
     "dimensions": "N/A",
@@ -482,7 +480,6 @@
   },
   {
     "id": "GAR-0025",
-    "featured": true,
     "name": "Uvarovite",
     "locality": "Acoje Mine, Luzon, Philippines",
     "dimensions": "N/A",

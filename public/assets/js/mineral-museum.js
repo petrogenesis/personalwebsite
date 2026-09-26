@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const modalSize = document.getElementById("modal-size");
   const modalWeight = document.getElementById("modal-weight");
   const modalPrice = document.getElementById("modal-price");
+  const modalBuyNow = document.getElementById("modal-buy-now");
   const modalSystem = document.getElementById("modal-system");
   const modalSelfCollected = document.getElementById("modal-self-collected");
   const modalDescription = document.getElementById("modal-description");
@@ -72,16 +73,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     modalSize.textContent = card.dataset.size || "N/A";
     modalWeight.textContent = card.dataset.weight;
 
+    modalPrice.textContent = card.dataset.price;
+
+    // Buy Now: shown here, under Price, only in the opened modal -- not
+    // on the grid card itself.
+    modalBuyNow.innerHTML = "";
     if (card.dataset.forSale === "Yes" && card.dataset.ebayLink) {
-      modalPrice.innerHTML = "";
-      const priceLink = document.createElement("a");
-      priceLink.href = card.dataset.ebayLink;
-      priceLink.target = "_blank";
-      priceLink.rel = "noopener noreferrer";
-      priceLink.textContent = card.dataset.price;
-      modalPrice.appendChild(priceLink);
-    } else {
-      modalPrice.textContent = card.dataset.price;
+      const buyBtn = document.createElement("a");
+      buyBtn.className = "buy-now-btn";
+      buyBtn.href = card.dataset.ebayLink;
+      buyBtn.target = "_blank";
+      buyBtn.rel = "noopener noreferrer";
+      buyBtn.textContent = "Buy Now";
+      modalBuyNow.appendChild(buyBtn);
     }
 
     modalSystem.textContent = card.dataset.system;
@@ -158,12 +162,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       subcategory: mineral.subcategory || ""
     });
 
+    const forSale = isForSale(mineral);
+
     card.innerHTML = `
       <img src="${mineral.thumbnail || mineral.image}" alt="${mineral.name}" loading="lazy">
       <h3>
         ${mineral.name}
       </h3>
       <p>${mineral.locality}</p>
+      ${forSale ? `<p class="mineral-price">${mineral.price}</p>` : ""}
     `;
 
     card.addEventListener("click", () => openMineralModal(card));

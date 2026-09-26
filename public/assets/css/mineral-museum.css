@@ -256,11 +256,16 @@
 }
 
 .sidebar ul li {
-  padding: 6px 4px;
-  margin-bottom: 4px;
+  padding: 5px 4px;
+  margin-bottom: 2px;
   border-radius: 4px;
   transition: background-color 0.2s;
   cursor: pointer;
+  /* Text size is untouched -- it inherits the site's normal type.
+     Only line-height is tightened: the site's base paragraph
+     line-height (1.75em) is what was padding every single-line
+     sidebar item with extra height, not the font size itself. */
+  line-height: 1.2;
 }
 
 .sidebar ul li:hover {
@@ -270,6 +275,34 @@
 .sidebar ul li.active {
   background-color: #007BFF;
   color: #fff;
+}
+
+/* ---------------- Subcategory nesting ---------------- */
+/* Indent nested (subcategory) lists a full tab-stop past their parent
+   category, and prefix each one with a small folder icon so the
+   parent/child relationship is obvious at a glance. */
+.sidebar ul li ul {
+  padding-left: 28px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.sidebar ul li ul li {
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* Override the parent .sidebar ul li rule's 5px vertical padding --
+     that padding is sized for the clickable category rows above, and
+     doubles up with margin-bottom here to create the leftover gap
+     between a subcategory and the next category. */
+  padding: 1px 4px;
+  margin-bottom: 0;
+}
+
+.sidebar ul li ul li .icon {
+  font-size: 0.85em;
+  opacity: 0.7;
 }
 
 /* Search bar */
@@ -559,27 +592,6 @@ body.dark-mode .modal-content {
     background: rgba(255, 255, 255, 0.06);
 }
 
-/* ---------------- Subcategory nesting ---------------- */
-/* Indent nested (subcategory) lists a full tab-stop past their parent
-   category, and prefix each one with a small folder icon so the
-   parent/child relationship is obvious at a glance. */
-.sidebar ul li ul {
-    padding-left: 28px;
-    margin-top: 4px;
-}
-
-.sidebar ul li ul li {
-    font-size: 0.9em;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.sidebar ul li ul li .icon {
-    font-size: 0.85em;
-    opacity: 0.7;
-}
-
 .museum-header h1 {
     color: #ffffff;
     font-weight: 700;
@@ -619,4 +631,38 @@ body.dark-mode .modal-content {
 /* Gallery background consistency */
 .modal-gallery {
     background: transparent;
+}
+
+/* ---------------- Card price ---------------- */
+.mineral-card .mineral-price {
+  font-weight: bold;
+  margin: 0 8px 8px;
+  font-size: 0.95rem;
+}
+
+body.dark-mode .mineral-card .mineral-price {
+  color: #f2f2f2;
+}
+
+/* ---------------- Modal Buy Now ---------------- */
+/* Shown only in the opened detail modal, directly under the Price row --
+   not on the grid card itself. */
+#modal-buy-now {
+  margin: 6px 0 12px;
+}
+
+.buy-now-btn {
+  display: inline-block;
+  padding: 8px 22px;
+  background-color: #3fb1a3;
+  color: #fff !important;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #339287;
 }

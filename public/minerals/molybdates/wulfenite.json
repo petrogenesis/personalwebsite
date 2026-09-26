@@ -1,6 +1,7 @@
 [
   {
     "id": "B-AZ-00002",
+    "featured": true,
     "name": "Wulfenite",
     "locality": "Durango, Mexico",
     "dimensions": "12.0 x 7.0 x 10.0 cm",
@@ -9,6 +10,7 @@
     "price": "$250",
     "system": "Tetragonal",
     "selfCollected": "No",
+    "ebayLink": "https://www.ebay.com/itm/227539704996",
     "category": "Molybdates",
     "subcategory": "Wulfenite",
     "image": "images/mineral-museum-images-thumbnails/wulfenite/B-AZ-00002-1.jpg",
