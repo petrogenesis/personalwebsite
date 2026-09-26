@@ -2655,7 +2655,7 @@ input, select, textarea {
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
-		color: #363535;
+		color: #ffffff;
 		padding: 5em;
 		text-align: center;
 	}
@@ -3423,4 +3423,30 @@ h3.fenics-header {
   font-size: 2rem; /* adjust as you like */
   font-weight: bold;
   font-family: monospace;
+}
+
+/* ---------------- mineralcollection.html: Enter Mineral Museum CTA ---------------- */
+/* Self-contained flex layout so the heading and button always sit close
+   together, regardless of the row/wrapper spacing around them. */
+.museum-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.museum-cta header,
+.museum-cta footer {
+  margin: 0;
+}
+
+/* ---------------- mineralcollection.html: tighten space before museum CTA ---------------- */
+/* .wrapper's default padding/margin (5em + 5em = 10em) is meant for
+   sections with nothing directly below them. This section is followed
+   right away by the "Enter the mineral museum" CTA, so cut it down
+   without touching .wrapper.style4 globally (also used on projects.html). */
+.mineral-intro {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
